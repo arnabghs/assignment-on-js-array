@@ -49,5 +49,14 @@ const sumOfaListOfNumbers = require('./library').sumOfaListOfNumbers;
 assert.deepEqual(sumOfaListOfNumbers([2]),2);//single_element
 assert.deepEqual(sumOfaListOfNumbers([2,4,6,3,5,7,0]),27);//list
 
+/*
+ * 4. Printing reverse - Given a list of numbers, PRINT the list in reverse order
+ */
+const printReverse = require('./library').printReverse;
+
+assert.deepEqual(printReverse([1]),[1]); //single digit
+assert.deepEqual(printReverse([1,2,3]),[3,2,1]); //simple list
+assert.deepEqual(printReverse([9,-4,-5,1,2,-6]),[-6,2,1,-5,-4,9]); //negative numbers
+
 
 console.log("---------- Everything is fine -------------")

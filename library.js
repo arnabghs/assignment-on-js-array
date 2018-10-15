@@ -38,5 +38,18 @@ const sumOfaListOfNumbers = function(array){
   }
   return sum;
 }
-
 exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
+
+/*
+ * 4. Printing reverse - Given a list of numbers, PRINT the list in reverse order
+ */
+
+const printReverse = function (array){
+  let outputArray = [];
+  for (index = 0; index < array.length; index++){
+    outputArray[index] = array[(array.length-1)-index];
+  }
+  return outputArray;
+}
+exports.printReverse = printReverse;
+
