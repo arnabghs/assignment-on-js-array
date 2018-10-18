@@ -53,3 +53,45 @@ const printReverse = function (array){
 }
 exports.printReverse = printReverse;
 
+/*
+ *5. Selecting every second element - Given a list of numbers, select every second one:
+ */
+
+const selectEverySecondElement = function(array){
+  let outputArray = [];
+  let outputIndex = 0;
+  for (index = 0; index < array.length; index++){
+    if (index%2 == 0){
+      outputArray[outputIndex] = array[index];
+      outputIndex ++ ;
+    }
+  }
+  return outputArray;
+}
+exports.selectEverySecondElement = selectEverySecondElement;
+
+/*
+ *6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order
+ */
+
+const fiboReverse = function(length){
+  let firstElement = 0;
+  let secondElement = 1;
+  let element = 0;
+  let outputArray = [];
+  if (length == 1){
+    outputArray = [firstElement]
+  }else {
+    outputArray = [firstElement,secondElement];
+  }
+  //from 3rd no.
+  for(let index=2 ; index < length ; index++) {
+    element = (firstElement+secondElement);
+    firstElement = secondElement;
+    secondElement = element;
+    outputArray[index] = element;
+  }
+  outputArray = outputArray.reverse();
+  return outputArray;
+}
+exports.fiboReverse = fiboReverse;

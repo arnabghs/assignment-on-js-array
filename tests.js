@@ -58,5 +58,26 @@ assert.deepEqual(printReverse([1]),[1]); //single digit
 assert.deepEqual(printReverse([1,2,3]),[3,2,1]); //simple list
 assert.deepEqual(printReverse([9,-4,-5,1,2,-6]),[-6,2,1,-5,-4,9]); //negative numbers
 
+/*
+ *5. Selecting every second element - Given a list of numbers, select every second one:
+ */
+
+const selectEverySecondElement = require('./library').selectEverySecondElement;
+
+assert.deepEqual(selectEverySecondElement([2,3,4,5,6]),[2,4,6]); //list starting with even & odd no of elements
+assert.deepEqual(selectEverySecondElement([1,2,3,4,5,6]),[1,3,5]); //list starting with odd & even no of elements
+assert.deepEqual(selectEverySecondElement([1,2,-3,-4,5,0,6,7,0]),[1,-3,5,6,0]); //negative numbers and zero
+
+/*
+ *6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order
+ */
+
+const fiboReverse = require('./library').fiboReverse;
+
+assert.deepEqual(fiboReverse(1),[0]); //for single digit
+assert.deepEqual(fiboReverse(2),[1,0]); //for length two 
+assert.deepEqual(fiboReverse(8),[13, 8, 5, 3, 2, 1, 1, 0]); //for series 
+
 
 console.log("---------- Everything is fine -------------")
+
