@@ -79,19 +79,45 @@ const fiboReverse = function(length){
   let secondElement = 1;
   let element = 0;
   let outputArray = [];
-  if (length == 1){
-    outputArray = [firstElement]
-  }else {
-    outputArray = [firstElement,secondElement];
-  }
-  //from 3rd no.
-  for(let index=2 ; index < length ; index++) {
+  for(let index=0 ; index < length ; index++) {
+    outputArray[index] = firstElement;
     element = (firstElement+secondElement);
     firstElement = secondElement;
     secondElement = element;
-    outputArray[index] = element;
   }
   outputArray = outputArray.reverse();
   return outputArray;
 }
 exports.fiboReverse = fiboReverse;
+
+/*
+ * 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence
+ */
+
+const findGreatestNumber = function(inputArray){
+  let highestNumber = inputArray[0];
+  for (value of inputArray){
+    if (value > highestNumber){
+      highestNumber = value;
+    }
+  }
+  return highestNumber;
+}
+exports.findGreatestNumber = findGreatestNumber;
+
+/*
+ * 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence
+ */
+
+const findLowestNumber = function(inputArray){
+  let lowestNumber = inputArray[0];
+  for (value of inputArray){
+    if (value < lowestNumber){
+      lowestNumber = value;
+    }
+  }
+  return lowestNumber;
+}
+exports.findLowestNumber = findLowestNumber;
+
+

@@ -78,6 +78,27 @@ assert.deepEqual(fiboReverse(1),[0]); //for single digit
 assert.deepEqual(fiboReverse(2),[1,0]); //for length two 
 assert.deepEqual(fiboReverse(8),[13, 8, 5, 3, 2, 1, 1, 0]); //for series 
 
+/*
+ * 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence
+ */
+
+const {findGreatestNumber} = require('./library');
+
+assert.deepEqual(findGreatestNumber([4]),4); //for single digit
+assert.deepEqual(findGreatestNumber([1,3,4,15,5,6,7]),15); //for list  
+assert.deepEqual(findGreatestNumber([1,3,-5,0,-10,10,0,6]),10); // for negative nos and zero
+
+/*
+ * 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence
+ */
+
+const {findLowestNumber} = require('./library'); 
+
+assert.deepEqual(findLowestNumber([1]),1);//for single digit
+assert.deepEqual(findLowestNumber([1,4,5,6,7]),1);// for list
+assert.deepEqual(findLowestNumber([1,3,4,0,-5,7,-10,5]),-10);// for -ve nos and zero
+
+
 
 console.log("---------- Everything is fine -------------")
 
