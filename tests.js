@@ -282,6 +282,20 @@ assert.deepEqual(zip([1,2,3],[4,5,6]),[[1,4],[2,5],[3,6]]); // for multi element
 assert.deepEqual(zip([-2,0,5],[0,7,-1]),[[-2,0],[0,7],[5,-1]]); // including 0 and -ve nos
 assert.deepEqual(zip([1,4,0,-6],[-3,0,-6]),[[1,-3],[4,0],[0,-6]]); // for unequal arrays
 
+/*
+ *  26. Rotate - creates a new array by rotating elements from the given array.
+ */
+
+const {rotate} = require('./library'); 
+
+assert.deepEqual(rotate([1],1),[1]); // single element
+assert.deepEqual(rotate([1,2],1),[2,1]); // double element
+assert.deepEqual(rotate([1,2,3],0),[1,2,3]); // double element
+assert.deepEqual(rotate([1,2,3],1),[2,3,1]); // double element
+assert.deepEqual(rotate([1,2,3,4,5],4),[5,1,2,3,4]); // multiple elements
+assert.deepEqual(rotate([1,-2,0,4,-5],4),[-5,1,-2,0,4]); // multiple elements
+
+
 
 
 console.log("---------- Everything is fine -------------");

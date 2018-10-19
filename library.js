@@ -362,3 +362,24 @@ const zip = function(firstArray,secondArray){
   return outputArray;
 }
 exports.zip = zip;
+
+
+/*
+ *  26. Rotate - creates a new array by rotating elements from the given array.
+ */
+
+const rotate = function(inputArray,turn){
+  let outputArray = [];
+  for (index = turn; index < inputArray.length; index++){
+    outputArray.push(inputArray[index]);
+  }
+  for (index = 0; index < turn; index++){
+    outputArray.push(inputArray[index]);
+  }
+  return outputArray;
+}
+exports.rotate = rotate;
+
+
+
+
