@@ -171,11 +171,17 @@ assert.deepEqual(reverseArray([1]),[1]);// for single element
 assert.deepEqual(reverseArray([1,4,-6,0,-2,3]),[3,-2,0,-6,4,1]);// for multi elements
 assert.deepEqual(reverseArray([5,"germany",0,"L.A",7]),[7,"L.A",0,"germany",5]);// including strings with nos
 
+/*
+ * 16. Index Of a Number - Given an array of numbers find the first position of a specified number
+ */
 
+const {findIndex} = require('./library');
+
+assert.deepEqual(findIndex([2],2),0);// single element array
+assert.deepEqual(findIndex([1,2,3,4,3,2,3,2,1,2,4],3),2);// multi element array
+assert.deepEqual(findIndex([1,4,0,-5,-6,7,-3,0],0),2);// array including 0 and -ve
 
 
 
 
 console.log("---------- Everything is fine -------------")
-
-

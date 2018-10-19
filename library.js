@@ -204,3 +204,20 @@ const reverseArray = function(inputArray){
   return outputArray;
 }
 exports.reverseArray = reverseArray;  
+
+
+/*
+ * 16. Index Of a Number - Given an array of numbers find the first position of a specified number
+ */
+ 
+
+const findIndex = function(inputArray,number){
+  let indexOfNumber;
+  for (index = (inputArray.length-1); index >= 0; index--){
+    if (inputArray[index] == number){
+      indexOfNumber = index;
+    }
+  }
+  return indexOfNumber;
+}
+exports.findIndex = findIndex;
