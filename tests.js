@@ -204,8 +204,15 @@ assert.deepEqual(checkDescendingOrder([5,4,3,2]),true);// multi elements array
 assert.deepEqual(checkDescendingOrder([1,2,9,4,5]),false);// multi elements array
 assert.deepEqual(checkDescendingOrder([8,6,5,2,0,-3,-6]),true);// array with 0 and -ve nos
 
+/*
+ * 19. Extract digits - Given a number, extract the digits of a number into an array:
+ */
 
+const {extractDigits} = require('./library');
 
+assert.deepEqual(extractDigits(5),[5]);//one element array 
+assert.deepEqual(extractDigits(233876),[2,3,3,8,7,6]);// multi elements array
+assert.deepEqual(extractDigits(812003),[8,1,2,0,0,3]);// array with 0 
 
 
 

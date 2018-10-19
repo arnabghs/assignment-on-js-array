@@ -258,4 +258,16 @@ const checkDescendingOrder = function(inputArray){
 }
 exports.checkDescendingOrder = checkDescendingOrder;
 
+/*
+ * 19. Extract digits - Given a number, extract the digits of a number into an array:
+ */
 
+const extractDigits = function(number){
+  let stringOfNumber = ''+number;
+  let outputArray = [];
+  for (index = 0; index < stringOfNumber.length ; index++){
+    outputArray.push(+stringOfNumber[index]);
+  }
+  return outputArray;
+}
+exports.extractDigits = extractDigits;
