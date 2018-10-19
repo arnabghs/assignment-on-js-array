@@ -257,6 +257,24 @@ assert.deepEqual(findDifference([1],[2]),[1]); // for one element
 assert.deepEqual(findDifference([1,2,3,4,5],[3,4,5,6,7,8]),[1,2]); // for multi elements
 assert.deepEqual(findDifference([1,-1,0,2,-3,6],[6,-3,-4,-1,3]),[1,0,2]); // including 0 & -ve
 
+/*
+ *  24. isSubset - Given two arrays, check if the second is a proper subset of the first.
+ */
+
+const {isSubset} = require('./library'); 
+
+assert.deepEqual(isSubset([1],[]),true); //for one element set 
+assert.deepEqual(isSubset([1],[1]),false); //subset but not proper
+assert.deepEqual(isSubset([1,2,3],[1,2,3]),false); //subset but not proper
+assert.deepEqual(isSubset([1,2,4,6,7,8],[2,4,6]),true); //proper subset
+assert.deepEqual(isSubset([1,2,4,6,7,8],[4,6,2]),true); //proper subset
+assert.deepEqual(isSubset([1,2,4,6,7,8],[4,6,2,0]),false); //proper subset
+assert.deepEqual(isSubset([1,0,-4,0,-5,7,8,1],[0,-4,-5,1]),true); //including 0 and -ve values
+
+
+
+
+
 
 
 

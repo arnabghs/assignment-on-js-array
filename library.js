@@ -329,3 +329,25 @@ const findDifference = function (firstArray,secondArray){
   return outputArray;
 }
 exports.findDifference = findDifference;
+
+/*
+ *  24. isSubset - Given two arrays, check if the second is a proper subset of the first.
+ */
+
+const isSubset = function(firstArray,secondArray){
+  let outputArray = makeIntersection(firstArray,secondArray);
+  let statement = true;
+
+  for (value of secondArray){
+    if (!outputArray.includes(value)){
+      statement = false;
+    }
+  }
+  if (firstArray.length == outputArray.length){
+    statement = false;
+  }
+  return statement;
+}
+exports.isSubset = isSubset;
+
+
