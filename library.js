@@ -380,6 +380,23 @@ const rotate = function(inputArray,turn){
 }
 exports.rotate = rotate;
 
+/*
+ *  27. Partition - Given an array of numbers, it returns a partitioned array consisting of numbers above a certain number and below a certain number
+ */
 
+const partitionArray = function (inputArray,limit){
+  let numbersBelowLimit = [];
+  let numbersAboveLimit = [];
 
+  for (value of inputArray){
+    if (value > limit){
+      numbersAboveLimit.push(value);
+    } else {
+      numbersBelowLimit.push(value);
+    }
+  }
+  let outputArray = [numbersBelowLimit,numbersAboveLimit];
+  return outputArray;
+}
+exports.partitionArray = partitionArray;
 

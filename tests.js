@@ -295,7 +295,15 @@ assert.deepEqual(rotate([1,2,3],1),[2,3,1]); // double element
 assert.deepEqual(rotate([1,2,3,4,5],4),[5,1,2,3,4]); // multiple elements
 assert.deepEqual(rotate([1,-2,0,4,-5],4),[-5,1,-2,0,4]); // multiple elements
 
+/*
+ *  27. Partition - Given an array of numbers, it returns a partitioned array consisting of numbers above a certain number and below a certain number
+ */
 
+const {partitionArray} = require('./library'); 
+
+assert.deepEqual(partitionArray([1,2],1),[[1],[2]]); // single element array
+assert.deepEqual(partitionArray([1,2,7,4,9,10,5],5),[[1,2,4,5], [7,9,10]]); // multi element array
+assert.deepEqual(partitionArray([1,-3,5,-4,0,6,2,3],1),[[1,-3,-4,0],[5,6,2,3]]); // including 0 and -ve
 
 
 console.log("---------- Everything is fine -------------");
