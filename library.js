@@ -350,4 +350,15 @@ const isSubset = function(firstArray,secondArray){
 }
 exports.isSubset = isSubset;
 
+/*
+ *  25. Zip - insert elements from two arrays as follows:
+ */
 
+const zip = function(firstArray,secondArray){
+  let outputArray = [];
+  for(index = 0; index < secondArray.length ; index++){
+    outputArray[index] = [firstArray[index],secondArray[index]];
+  }
+  return outputArray;
+}
+exports.zip = zip;

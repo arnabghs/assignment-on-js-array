@@ -271,10 +271,16 @@ assert.deepEqual(isSubset([1,2,4,6,7,8],[4,6,2]),true); //proper subset
 assert.deepEqual(isSubset([1,2,4,6,7,8],[4,6,2,0]),false); //proper subset
 assert.deepEqual(isSubset([1,0,-4,0,-5,7,8,1],[0,-4,-5,1]),true); //including 0 and -ve values
 
+/*
+ *  25. Zip - insert elements from two arrays as follows:
+ */
 
+const {zip} = require('./library'); 
 
-
-
+assert.deepEqual(zip([1],[2]),[[1,2]]); // for one element array
+assert.deepEqual(zip([1,2,3],[4,5,6]),[[1,4],[2,5],[3,6]]); // for multi element array
+assert.deepEqual(zip([-2,0,5],[0,7,-1]),[[-2,0],[0,7],[5,-1]]); // including 0 and -ve nos
+assert.deepEqual(zip([1,4,0,-6],[-3,0,-6]),[[1,-3],[4,0],[0,-6]]); // for unequal arrays
 
 
 
