@@ -225,6 +225,17 @@ assert.deepEqual(removeDuplicates([2]),[2]); // one element array
 assert.deepEqual(removeDuplicates([1,3,5,2,3,1,4,5,2]),[1,3,5,2,4]); // multi elements array
 assert.deepEqual(removeDuplicates([1,0,-1,3,-1,-2,0,-2]),[1,0,-1,3,-2]); // including 0 and e
 
+/*
+ *  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays.
+ */
+
+const {makeUnionArray} = require('./library'); 
+
+assert.deepEqual(makeUnionArray([1],[2]),[1,2]); // for one elements array
+assert.deepEqual(makeUnionArray([1,2,1,3,4],[3,4,5,6]),[1,2,3,4,5,6]); // for multi elements array
+assert.deepEqual(makeUnionArray([1,2,0,-3,2,1,-4],[2,3,0,-2,-3]),[1,2,0,-3,-4,3,-2]); // including 0 and -ve
+
+
 
 
 console.log("---------- Everything is fine -------------");

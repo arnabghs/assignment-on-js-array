@@ -287,3 +287,16 @@ const removeDuplicates = function(inputArray){
 }
 exports.removeDuplicates = removeDuplicates;
 
+
+/*
+ *  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays.
+ */
+
+const makeUnionArray = function(firstArray,secondArray){
+  let outputArray = firstArray.concat(secondArray);
+  outputArray = removeDuplicates(outputArray);
+  return outputArray;
+}
+exports.makeUnionArray = makeUnionArray;
+
+
