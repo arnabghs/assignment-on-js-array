@@ -181,7 +181,32 @@ assert.deepEqual(findIndex([2],2),0);// single element array
 assert.deepEqual(findIndex([1,2,3,4,3,2,3,2,1,2,4],3),2);// multi element array
 assert.deepEqual(findIndex([1,4,0,-5,-6,7,-3,0],0),2);// array including 0 and -ve
 
+/*
+ * 17. Ascending order - Given an array of numbers, check if the array is in ascending order
+ */
+
+const {checkAscendingOrder} = require('./library');
+
+assert.deepEqual(checkAscendingOrder([1]),true);// one element array
+assert.deepEqual(checkAscendingOrder([1,2,3,4,5]),true);// multi elements array
+assert.deepEqual(checkAscendingOrder([1,2,9,4,5]),false);// multi elements array
+assert.deepEqual(checkAscendingOrder([-5,-2,0,5,8]),true);// array with 0 and -ve nos
+
+
+/*
+ * 18. Descending order - Given an array of numbers, check if the array is in descending order
+ */
+
+const {checkDescendingOrder} = require('./library');
+
+assert.deepEqual(checkDescendingOrder([1]),true);// one element array
+assert.deepEqual(checkDescendingOrder([5,4,3,2]),true);// multi elements array
+assert.deepEqual(checkDescendingOrder([1,2,9,4,5]),false);// multi elements array
+assert.deepEqual(checkDescendingOrder([8,6,5,2,0,-3,-6]),true);// array with 0 and -ve nos
 
 
 
-console.log("---------- Everything is fine -------------")
+
+
+
+console.log("---------- Everything is fine -------------");

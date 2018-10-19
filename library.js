@@ -200,7 +200,11 @@ exports.countNosBelowlimit = countNosBelowlimit;
  */
 
 const reverseArray = function(inputArray){
-  let outputArray = inputArray.reverse();
+  let outputArray = [];
+  let upperLimit = inputArray.length-1;
+  for (index = 0; index <= upperLimit ; index++){
+    outputArray[index] = inputArray[upperLimit - index];
+  }
   return outputArray;
 }
 exports.reverseArray = reverseArray;  
@@ -221,3 +225,37 @@ const findIndex = function(inputArray,number){
   return indexOfNumber;
 }
 exports.findIndex = findIndex;
+
+
+/*
+ * 17. Ascending order - Given an array of numbers, check if the array is in ascending order
+ */
+
+const checkAscendingOrder = function(inputArray){
+  let statement = true;
+  for (index = 0; index < inputArray.length-1 ; index++){
+    if ( inputArray[index] > inputArray[index+1]){
+      statement = false;
+    }
+  }
+  return statement;
+}
+exports.checkAscendingOrder = checkAscendingOrder;
+
+
+/*
+ * 18. Descending order - Given an array of numbers, check if the array is in descending order
+ */
+
+const checkDescendingOrder = function(inputArray){
+  let statement = true;
+  for (index = 0; index < inputArray.length-1 ; index++){
+    if ( inputArray[index] < inputArray[index+1]){
+      statement = false;
+    }
+  }
+  return statement;
+}
+exports.checkDescendingOrder = checkDescendingOrder;
+
+
