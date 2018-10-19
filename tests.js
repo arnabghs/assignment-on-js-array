@@ -215,5 +215,16 @@ assert.deepEqual(extractDigits(233876),[2,3,3,8,7,6]);// multi elements array
 assert.deepEqual(extractDigits(812003),[8,1,2,0,0,3]);// array with 0 
 
 
+/*
+ * 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements.
+ */
+
+const {removeDuplicates} = require('./library');
+
+assert.deepEqual(removeDuplicates([2]),[2]); // one element array
+assert.deepEqual(removeDuplicates([1,3,5,2,3,1,4,5,2]),[1,3,5,2,4]); // multi elements array
+assert.deepEqual(removeDuplicates([1,0,-1,3,-1,-2,0,-2]),[1,0,-1,3,-2]); // including 0 and e
+
+
 
 console.log("---------- Everything is fine -------------");

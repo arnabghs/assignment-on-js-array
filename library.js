@@ -271,3 +271,19 @@ const extractDigits = function(number){
   return outputArray;
 }
 exports.extractDigits = extractDigits;
+
+/*
+ * 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements.
+ */
+
+const removeDuplicates = function(inputArray){
+  let outputArray= [];
+  for (value of inputArray){
+      if (!outputArray.includes(value)){
+        outputArray.push(value);
+      }
+  }
+  return outputArray;
+}
+exports.removeDuplicates = removeDuplicates;
+
