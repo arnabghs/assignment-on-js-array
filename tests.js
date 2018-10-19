@@ -99,6 +99,83 @@ assert.deepEqual(findLowestNumber([1,4,5,6,7]),1);// for list
 assert.deepEqual(findLowestNumber([1,3,4,0,-5,7,-10,5]),-10);// for -ve nos and zero
 
 
+/*
+ * 9. Average of a list - Given a list of numbers, find the average of that list
+ */
+
+const {findAverage} = require('./library'); 
+
+assert.deepEqual(findAverage([5]),5);//single digit
+assert.deepEqual(findAverage([2,4,6,8]),5);//for list
+assert.deepEqual(findAverage([1,3,5,0,-7,-4,10,0]),1);//with -ve numbers and zero
+
+/*
+ * 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names:
+ */
+
+const {countLength} = require('./library'); 
+
+assert.deepEqual(countLength(["kolkata"]),[7]);// single word
+assert.deepEqual(countLength(["mary","had","a","little","lamb"]),[4, 3, 1, 6, 4]);//list of words 
+assert.deepEqual(countLength(["naruto"," ","","japan"]),[6,1,0,5]); // with space & empty string
+
+/*
+ * 11. Counting odd numbers - Write a function to count how many odd numbers are present in an array
+ */
+
+const {countOddNumbers}= require('./library'); 
+
+assert.deepEqual(countOddNumbers([1]),1);// with one odd
+assert.deepEqual(countOddNumbers([1,2,3,4,5,6,7,8]),4);// list of odd and even
+assert.deepEqual(countOddNumbers([1,3,-4,-7,0,4,-2,8,0]),3);// containing 0 and -ve values
+
+/*
+ * 12. Counting even numbers - Write a function to count how many even numbers are present in an array
+ */
+
+const {countEvenNumbers}= require('./library'); 
+
+
+assert.deepEqual(countEvenNumbers([2]),1);// with one even
+assert.deepEqual(countEvenNumbers([1,2,3,4,5,6,7,8]),4);// list of odd and even
+assert.deepEqual(countEvenNumbers([1,3,-4,-7,0,4,-2,8,0]),6);// containing 0 and -ve values
+
+/*
+ * 13. Count how many numbers above a certain threshold in an array
+ */
+
+const {countNosAbovelimit} = require('./library');
+
+assert.deepEqual(countNosAbovelimit([1],0),1);// single digit
+assert.deepEqual(countNosAbovelimit([3,4,5,6,1],4),2);// in a list
+assert.deepEqual(countNosAbovelimit([1,2,0,-6,-3,-8,0],-5),5);// with 0 & -ve values
+
+
+/*
+ * 14. Count how many numbers below a certain threshold in an array
+ */
+
+const {countNosBelowlimit} = require('./library');
+
+assert.deepEqual(countNosBelowlimit([1],2),1);// single digit
+assert.deepEqual(countNosBelowlimit([3,4,5,6,1],4),2);// in a list
+assert.deepEqual(countNosBelowlimit([1,2,0,-6,-3,-8,0],-5),2);// with 0 & -ve values
+
+/*
+ * 15. Reversing an Array - Given an array, write a function that provides a reversed version of the same array *without* changing the contents of the original array.
+ */
+
+const {reverseArray} = require('./library');
+
+assert.deepEqual(reverseArray([1]),[1]);// for single element
+assert.deepEqual(reverseArray([1,4,-6,0,-2,3]),[3,-2,0,-6,4,1]);// for multi elements
+assert.deepEqual(reverseArray([5,"germany",0,"L.A",7]),[7,"L.A",0,"germany",5]);// including strings with nos
+
+
+
+
+
 
 console.log("---------- Everything is fine -------------")
+
 
