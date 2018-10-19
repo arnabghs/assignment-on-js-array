@@ -246,6 +246,16 @@ assert.deepEqual(makeIntersection([1],[2]),[]); // for one elements array
 assert.deepEqual(makeIntersection([1,3,4,5,6],[6,8,3,9]),[3,6]); // for multi elements array
 assert.deepEqual(makeIntersection([1,0,-7,0,6,-5],[0,7,-7,-5,1,1,1,0]),[1,0,-7,-5]); // including 0 and -ve
 
+/*
+ *  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second.
+ */
+
+const {findDifference} = require('./library'); 
+
+assert.deepEqual(findDifference([1],[1]),[]); // for one element
+assert.deepEqual(findDifference([1],[2]),[1]); // for one element
+assert.deepEqual(findDifference([1,2,3,4,5],[3,4,5,6,7,8]),[1,2]); // for multi elements
+assert.deepEqual(findDifference([1,-1,0,2,-3,6],[6,-3,-4,-1,3]),[1,0,2]); // including 0 & -ve
 
 
 
