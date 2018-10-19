@@ -229,11 +229,23 @@ assert.deepEqual(removeDuplicates([1,0,-1,3,-1,-2,0,-2]),[1,0,-1,3,-2]); // incl
  *  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays.
  */
 
-const {makeUnionArray} = require('./library'); 
+const {makeUnion} = require('./library'); 
 
-assert.deepEqual(makeUnionArray([1],[2]),[1,2]); // for one elements array
-assert.deepEqual(makeUnionArray([1,2,1,3,4],[3,4,5,6]),[1,2,3,4,5,6]); // for multi elements array
-assert.deepEqual(makeUnionArray([1,2,0,-3,2,1,-4],[2,3,0,-2,-3]),[1,2,0,-3,-4,3,-2]); // including 0 and -ve
+assert.deepEqual(makeUnion([1],[2]),[1,2]); // for one elements array
+assert.deepEqual(makeUnion([1,2,1,3,4],[3,4,5,6]),[1,2,3,4,5,6]); // for multi elements array
+assert.deepEqual(makeUnion([1,2,0,-3,2,1,-4],[2,3,0,-2,-3]),[1,2,0,-3,-4,3,-2]); // including 0 and -ve
+
+/*
+ *  22. Intersection - Given two arrays, generate a new array consisting of unique elements that are contained in both arrays.
+ */
+
+const {makeIntersection} = require('./library'); 
+
+assert.deepEqual(makeIntersection([1],[1]),[1]); // for one elements array
+assert.deepEqual(makeIntersection([1],[2]),[]); // for one elements array
+assert.deepEqual(makeIntersection([1,3,4,5,6],[6,8,3,9]),[3,6]); // for multi elements array
+assert.deepEqual(makeIntersection([1,0,-7,0,6,-5],[0,7,-7,-5,1,1,1,0]),[1,0,-7,-5]); // including 0 and -ve
+
 
 
 
