@@ -2,13 +2,7 @@
  * 1. Selecting odd numbers - Given a list of numbers, select the ones that are odd
  */
 const selectOddNumbers = function (array){
-  let listOfOdds = [];
-  for (value of array){
-    if (value%2 != 0){
-      listOfOdds.push(value)
-    }
-  }
-  return listOfOdds;
+  return outputList = array.filter(function(element) {return element%2 != 0});
 }
 exports.selectOddNumbers = selectOddNumbers;
 
@@ -17,13 +11,7 @@ exports.selectOddNumbers = selectOddNumbers;
  */
 
 const selectEvenNumbers = function (array){
-  let listOfEvens = [];
-  for (value of array){
-    if (value%2==0){
-      listOfEvens.push(value)
-    }
-  }
-  return listOfEvens;
+  return outputList = array.filter(function(element) {return element%2 == 0});
 }
 exports.selectEvenNumbers = selectEvenNumbers;
 
@@ -38,6 +26,7 @@ const sumOfaListOfNumbers = function(array){
   }
   return sum;
 }
+
 exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
 
 /*
@@ -155,7 +144,7 @@ exports.countLength = countLength;
 exports.countOddNumbers = countOddNumbers;
 
 /*
- * 11. Counting even numbers - Write a function to count how many even numbers are present in an array
+ * 12. Counting even numbers - Write a function to count how many even numbers are present in an array
  */
 
  const countEvenNumbers  =function(inputArray){
