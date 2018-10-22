@@ -89,14 +89,12 @@ exports.findGreatestNumber = findGreatestNumber;
  */
 
 const findLowestNumber = function(inputArray){
-  let lowestNumber = inputArray[0];
-  for (value of inputArray){
-    if (value < lowestNumber){
-      lowestNumber = value;
-    }
-  }
-  return lowestNumber;
+  return lowestNumber = inputArray.reduce( function(previousValue,currentValue) {
+    previousValue = Math.min(previousValue,currentValue);
+    return previousValue;
+  })
 }
+
 exports.findLowestNumber = findLowestNumber;
 
 /*
