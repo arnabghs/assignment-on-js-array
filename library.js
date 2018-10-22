@@ -77,13 +77,10 @@ exports.fiboReverse = fiboReverse;
  */
 
 const findGreatestNumber = function(inputArray){
-  let highestNumber = inputArray[0];
-  for (value of inputArray){
-    if (value > highestNumber){
-      highestNumber = value;
-    }
-  }
-  return highestNumber;
+  return highestNumber = inputArray.reduce( function(previousValue,currentValue) {
+    previousValue = Math.max(previousValue,currentValue);
+    return previousValue;
+  })
 }
 exports.findGreatestNumber = findGreatestNumber;
 
