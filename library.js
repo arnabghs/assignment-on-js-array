@@ -20,13 +20,8 @@ exports.selectEvenNumbers = selectEvenNumbers;
  */
 
 const sumOfaListOfNumbers = function(array){
-  let sum = 0;
-  for (value of array){
-    sum = sum + value;
-  }
-  return sum;
+  return sum = array.reduce(function(pv,cv) {return pv+cv})
 }
-
 exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
 
 /*
