@@ -167,10 +167,7 @@ exports.countNosBelowlimit = countNosBelowlimit;
 
 const reverseArray = function(inputArray){
   let outputArray = [];
-  let upperLimit = inputArray.length-1;
-  for (index = 0; index <= upperLimit ; index++){
-    outputArray[index] = inputArray[upperLimit - index];
-  }
+  inputArray.map( function(element) {outputArray.unshift(element)});
   return outputArray;
 }
 exports.reverseArray = reverseArray;  
