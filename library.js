@@ -94,7 +94,6 @@ const findLowestNumber = function(inputArray){
     return previousValue;
   })
 }
-
 exports.findLowestNumber = findLowestNumber;
 
 /*
@@ -113,11 +112,9 @@ exports.findAverage = findAverage;
  */
 
 const countLength = function(inputArray){
-  let outputArray = [];
-  for (value of inputArray){
-    outputArray.push(value.length);
-  }
-  return outputArray;
+  return outputArray = inputArray.map( function(element){
+    return element.length;
+  })
 }
 exports.countLength = countLength;
 
