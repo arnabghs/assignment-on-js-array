@@ -30,9 +30,7 @@ exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
 
 const printReverse = function (array){
   let outputArray = [];
-  for (index = 0; index < array.length; index++){
-    outputArray[index] = array[(array.length-1)-index];
-  }
+  array.map( function(element) {outputArray.unshift(element)});
   return outputArray;
 }
 exports.printReverse = printReverse;
