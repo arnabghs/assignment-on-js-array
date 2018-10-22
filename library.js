@@ -36,19 +36,19 @@ const printReverse = function (array){
 exports.printReverse = printReverse;
 
 /*
- *5. Selecting every second element - Given a list of numbers, select every second one:
+ 5. Selecting every second element - Given a list of numbers, select every second one:
  */
 
-const selectEverySecondElement = function(array){
-  let outputArray = [];
-  let outputIndex = 0;
-  for (index = 0; index < array.length; index++){
-    if (index%2 == 0){
-      outputArray[outputIndex] = array[index];
-      outputIndex ++ ;
-    }
+const everySecondElementFilter = function(state,element){
+  let {index , elements} = state;
+  if (index%2 == 0){
+    elements = elements.concat(element);
   }
-  return outputArray;
+  return {index : index+1 , elements : elements}
+} 
+const selectEverySecondElement = function(array){
+  return outputArray = array.reduce( everySecondElementFilter,
+    {index:0, elements:[]}).elements;
 }
 exports.selectEverySecondElement = selectEverySecondElement;
 
