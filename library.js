@@ -188,7 +188,7 @@ exports.findIndex = findIndex;
  * 17. Ascending order - Given an array of numbers, check if the array is in ascending order
  */
 
-const checkOrder = function(state,currvalue){
+const checkOrderForAscending = function(state,currvalue){
   let {prevValue, statement}  = state;
   if (prevValue < currvalue){
     statement.push(true);
@@ -199,7 +199,7 @@ const checkOrder = function(state,currvalue){
 }
 
 const checkAscendingOrder = function(inputArray){
-  return statementArray = inputArray.reduce(checkOrder,
+  return statementArray = inputArray.reduce(checkOrderForAscending,
     {prevValue : inputArray[0]-1 , statement : [] }). statement.
     every( function (x){return x == true})
 }
@@ -209,16 +209,22 @@ const checkAscendingOrder = function(inputArray){
 /*
  * 18. Descending order - Given an array of numbers, check if the array is in descending order
  */
+const checkOrderForDescending = function(state,currvalue){
+  let {prevValue, statement}  = state;
+  if (prevValue > currvalue){
+    statement.push(true);
+  } else {
+    statement.push(false);
+  }
+  return { prevValue : currvalue , statement : statement}
+}
 
 const checkDescendingOrder = function(inputArray){
-  let statement = true;
-  for (index = 0; index < inputArray.length-1 ; index++){
-    if ( inputArray[index] < inputArray[index+1]){
-      statement = false;
-    }
-  }
-  return statement;
+  return statementArray = inputArray.reduce(checkOrderForDescending,
+    {prevValue : inputArray[0]+1 , statement : [] }). statement.
+    every( function (element){return element == true})
 }
+
 exports.checkDescendingOrder = checkDescendingOrder;
 
 /*
