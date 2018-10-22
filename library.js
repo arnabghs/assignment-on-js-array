@@ -154,13 +154,9 @@ exports.countNosAbovelimit = countNosAbovelimit;
  */
 
 const countNosBelowlimit = function(inputArray,threshold){
-  let count = 0;
-  for (value of inputArray){
-    if (value < threshold){
-      count += 1;
-    }
-  }
-  return count;
+   return count = inputArray.filter( function(element){
+     return element < threshold
+   }).length;
 }
 exports.countNosBelowlimit = countNosBelowlimit;
 
