@@ -188,16 +188,22 @@ exports.findIndex = findIndex;
  * 17. Ascending order - Given an array of numbers, check if the array is in ascending order
  */
 
-const checkAscendingOrder = function(inputArray){
-  let statement = true;
-  for (index = 0; index < inputArray.length-1 ; index++){
-    if ( inputArray[index] > inputArray[index+1]){
-      statement = false;
-    }
+const checkOrder = function(state,currvalue){
+  let {prevValue, statement}  = state;
+  if (prevValue < currvalue){
+    statement.push(true);
+  } else {
+    statement.push(false);
   }
-  return statement;
+  return { prevValue : currvalue , statement : statement}
 }
-exports.checkAscendingOrder = checkAscendingOrder;
+
+const checkAscendingOrder = function(inputArray){
+  return statementArray = inputArray.reduce(checkOrder,
+    {prevValue : inputArray[0]-1 , statement : [] }). statement.
+    every( function (x){return x == true})
+}
+  exports.checkAscendingOrder = checkAscendingOrder;
 
 
 /*
