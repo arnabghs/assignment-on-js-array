@@ -1,36 +1,48 @@
 /*
  * 1. Selecting odd numbers - Given a list of numbers, select the ones that are odd
  */
+
+const isOdd = function(element){
+    return element%2 != 0;
+  }
+
 const selectOddNumbers = function (array){
-  return outputList = array.filter(function(element) {return element%2 != 0});
+    return outputList = array.filter(isOdd);
 }
 exports.selectOddNumbers = selectOddNumbers;
 
 /*
  * 2. Selecting even numbers - Given a list of numbers, select the ones that are even
  */
+const isEven = function(element){
+    return element%2 == 0;
+  }
 
 const selectEvenNumbers = function (array){
-  return outputList = array.filter(function(element) {return element%2 == 0});
+  return outputList = array.filter(isEven);
 }
 exports.selectEvenNumbers = selectEvenNumbers;
 
 /*
  * 3. Sum of a list of numbers - Given a list of numbers, find the sum of all these numbers
  */
-
+const sum  = function(previousValue,curentValue) {
+  return previousValue+curentValue;
+}
 const sumOfaListOfNumbers = function(array){
-  return sum = array.reduce(function(pv,cv) {return pv+cv})
+  return array.reduce(sum);
 }
 exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
 
 /*
  * 4. Printing reverse - Given a list of numbers, PRINT the list in reverse order
  */
-
 const printReverse = function (array){
   let outputArray = [];
-  array.map( function(element) {outputArray.unshift(element)});
+  const putAtBeginning = function(element) {
+    outputArray.unshift(element);
+  }
+  array.map(putAtBeginning);
   return outputArray;
 }
 exports.printReverse = printReverse;
@@ -75,24 +87,24 @@ exports.fiboReverse = fiboReverse;
 /*
  * 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence
  */
-
-const findGreatestNumber = function(inputArray){
-  return highestNumber = inputArray.reduce( function(previousValue,currentValue) {
+const getHighestValue  = function(previousValue,currentValue) {
     previousValue = Math.max(previousValue,currentValue);
     return previousValue;
-  })
+  }
+const findGreatestNumber = function(inputArray){
+  return inputArray.reduce(getHighestValue);
 }
 exports.findGreatestNumber = findGreatestNumber;
 
 /*
  * 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence
  */
-
-const findLowestNumber = function(inputArray){
-  return lowestNumber = inputArray.reduce( function(previousValue,currentValue) {
+const getLowestValue =  function(previousValue,currentValue) {
     previousValue = Math.min(previousValue,currentValue);
     return previousValue;
-  })
+  }
+const findLowestNumber = function(inputArray){
+  return inputArray.reduce(getLowestValue);
 }
 exports.findLowestNumber = findLowestNumber;
 
@@ -110,11 +122,11 @@ exports.findAverage = findAverage;
 /*
  * 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names:
  */
-
-const countLength = function(inputArray){
-  return outputArray = inputArray.map( function(element){
+const calculateLength = function(element){
     return element.length;
-  })
+  }
+const countLength = function(inputArray){
+  return inputArray.map(calculateLength);
 }
 exports.countLength = countLength;
 
@@ -141,11 +153,11 @@ exports.countEvenNumbers = countEvenNumbers;
 /*
  * 13. Count how many numbers above a certain threshold in an array
  */
-
 const countNosAbovelimit = function(inputArray,threshold){
-  return count = inputArray.filter( function(element){
-    return element > threshold
-  }).length;
+  const chooseAboveLimit = function(element){
+    return element > threshold;
+  }
+  return inputArray.filter(chooseAboveLimit).length;
 }
 exports.countNosAbovelimit = countNosAbovelimit;
 
@@ -154,9 +166,10 @@ exports.countNosAbovelimit = countNosAbovelimit;
  */
 
 const countNosBelowlimit = function(inputArray,threshold){
-   return count = inputArray.filter( function(element){
-     return element < threshold
-   }).length;
+  const chooseBelowLimit = function(element){
+     return element < threshold;
+   }
+   return inputArray.filter(chooseBelowLimit).length;
 }
 exports.countNosBelowlimit = countNosBelowlimit;
 
@@ -167,7 +180,10 @@ exports.countNosBelowlimit = countNosBelowlimit;
 
 const reverseArray = function(inputArray){
   let outputArray = [];
-  inputArray.map( function(element) {outputArray.unshift(element)});
+  const putAtBeginning = function(element) {
+    outputArray.unshift(element);
+  }
+  inputArray.map(putAtBeginning);
   return outputArray;
 }
 exports.reverseArray = reverseArray;  
@@ -177,9 +193,10 @@ exports.reverseArray = reverseArray;
  */
 
 const findIndex = function(inputArray,number){
-  return indexOfNumber = inputArray.findIndex(function (element){
-    return element == number
-  });
+  const matchWithANumber = function (element){
+    return element == number;
+  }
+  return indexOfNumber = inputArray.findIndex(matchWithANumber);
 }
 exports.findIndex = findIndex;
 
@@ -244,14 +261,14 @@ exports.extractDigits = extractDigits;
 /*
  * 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements.
  */
-
 const removeDuplicates = function(inputArray){
   let outputArray = [];
-  inputArray.forEach( function(element){
+  const isPresent = function(element){
     if (!outputArray.includes(element)){
       outputArray.push(element);
     }
-  })
+  }
+  inputArray.map(isPresent);
   return outputArray;
 }
 exports.removeDuplicates = removeDuplicates;
@@ -273,10 +290,11 @@ exports.makeUnion = makeUnion;
  */
 
 const makeIntersection = function(firstArray,secondArray){
-  let outputArray =  firstArray.filter(function (element){
+  const isPresent = function (element){
     return secondArray.includes(element);
-  })
-  return outputArray = removeDuplicates(outputArray);
+  }
+  let outputArray =  firstArray.filter(isPresent);
+  return removeDuplicates(outputArray);
 }
 exports.makeIntersection = makeIntersection;
 
@@ -284,10 +302,11 @@ exports.makeIntersection = makeIntersection;
  *  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second.
  */
 const findDifference = function (firstArray,secondArray){
-   let outputArray = firstArray.filter(function (elements){
-     return (!secondArray.includes(elements));
-   })
-  return outputArray = removeDuplicates(outputArray);
+  const isPresent = function (element){
+    return (!secondArray.includes(element));
+  }
+  let outputArray = firstArray.filter(isPresent);
+  return removeDuplicates(outputArray);
 }
 exports.findDifference = findDifference;
 
@@ -298,10 +317,11 @@ exports.findDifference = findDifference;
 const isSubset = function(firstArray,secondArray){
   let outputArray = makeIntersection(firstArray,secondArray);
   let statement = false;
-  if ( outputArray.length < firstArray.length){
-    statement = secondArray.every(function(element){
+  const isPresent = function(element){
       return outputArray.includes(element);
-    })
+    }
+  if ( outputArray.length < firstArray.length){
+    statement = secondArray.every(isPresent);
   }
   return statement;
 }
@@ -332,7 +352,7 @@ exports.zip = zip;
 
 const rotate = function(inputArray,turn){
   let firstPart = inputArray.slice(turn);
-  return outputArray = firstPart.concat(inputArray.slice(0,turn));
+  return firstPart.concat(inputArray.slice(0,turn));
   }
 exports.rotate = rotate;
 
