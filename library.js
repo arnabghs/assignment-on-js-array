@@ -271,16 +271,12 @@ exports.makeUnion = makeUnion;
 /*
  *  22. Intersection - Given two arrays, generate a new array consisting of unique elements that are contained in both arrays.
  */
- 
+
 const makeIntersection = function(firstArray,secondArray){
-  let outputArray = [];
-  for (value of firstArray){
-   if (secondArray.includes(value)){
-     outputArray.push(value);
-   }
-  }
-  outputArray = removeDuplicates(outputArray);
-  return outputArray;
+  let outputArray =  firstArray.filter(function (element){
+    return secondArray.includes(element);
+  })
+  return outputArray = removeDuplicates(outputArray);
 }
 exports.makeIntersection = makeIntersection;
 
