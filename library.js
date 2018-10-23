@@ -312,11 +312,16 @@ exports.isSubset = isSubset;
  */
 
 const zip = function(firstArray,secondArray){
-  let outputArray = [];
-  for(index = 0; index < secondArray.length ; index++){
-    outputArray[index] = [firstArray[index],secondArray[index]];
+    const pushForZip = function(state,element){
+    let {index, finalArray} = state;
+    finalArray[index] = [firstArray[index],element];
+    index = index +1;
+    finalArray = finalArray;
+    return {index , finalArray};
   }
-  return outputArray;
+
+  return outputArray = secondArray.reduce(pushForZip,
+    {index : 0 , finalArray : []}).finalArray;
 }
 exports.zip = zip;
 
