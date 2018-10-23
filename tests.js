@@ -255,7 +255,7 @@ const {findDifference} = require('./library');
 
 assert.deepEqual(findDifference([1],[1]),[]); // for one element
 assert.deepEqual(findDifference([1],[2]),[1]); // for one element
-assert.deepEqual(findDifference([1,2,3,4,5],[3,4,5,6,7,8]),[1,2]); // for multi elements
+assert.deepEqual(findDifference([1,2,3,4,5,2],[3,4,5,6,7,8]),[1,2]); // for multi elements
 assert.deepEqual(findDifference([1,-1,0,2,-3,6],[6,-3,-4,-1,3]),[1,0,2]); // including 0 & -ve
 
 /*

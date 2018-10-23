@@ -284,14 +284,10 @@ exports.makeIntersection = makeIntersection;
  *  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second.
  */
 const findDifference = function (firstArray,secondArray){
-  let outputArray = [];
-  for (value of firstArray){
-    if (!secondArray.includes(value)){
-      outputArray.push(value);
-    }
-  }
-  outputArray = removeDuplicates(outputArray);
-  return outputArray;
+   let outputArray = firstArray.filter(function (elements){
+     return (!secondArray.includes(elements));
+   })
+  return outputArray = removeDuplicates(outputArray);
 }
 exports.findDifference = findDifference;
 
