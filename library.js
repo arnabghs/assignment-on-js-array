@@ -297,15 +297,11 @@ exports.findDifference = findDifference;
 
 const isSubset = function(firstArray,secondArray){
   let outputArray = makeIntersection(firstArray,secondArray);
-  let statement = true;
-
-  for (value of secondArray){
-    if (!outputArray.includes(value)){
-      statement = false;
-    }
-  }
-  if (firstArray.length == outputArray.length){
-    statement = false;
+  let statement = false;
+  if ( outputArray.length < firstArray.length){
+    statement = secondArray.every(function(element){
+      return outputArray.includes(element);
+    })
   }
   return statement;
 }
