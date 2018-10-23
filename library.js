@@ -341,18 +341,19 @@ exports.rotate = rotate;
  */
 
 const partitionArray = function (inputArray,limit){
-  let numbersBelowLimit = [];
-  let numbersAboveLimit = [];
-
-  for (value of inputArray){
-    if (value > limit){
-      numbersAboveLimit.push(value);
-    } else {
-      numbersBelowLimit.push(value);
+  const partitioner = function(state,element){
+    let {firstPart , secondPart } = state;
+    if ( element > limit){
+      secondPart.push(element);
+      return {firstPart , secondPart };
     }
+    firstPart.push(element);
+    return {firstPart , secondPart };
   }
-  let outputArray = [numbersBelowLimit,numbersAboveLimit];
-  return outputArray;
+
+  let  objectOfArrays = inputArray.reduce(partitioner,
+    {firstPart : [], secondPart : []})
+  return [objectOfArrays.firstPart , objectOfArrays.secondPart]
 }
 exports.partitionArray = partitionArray;
 
