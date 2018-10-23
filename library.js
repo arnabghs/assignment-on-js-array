@@ -331,15 +331,9 @@ exports.zip = zip;
  */
 
 const rotate = function(inputArray,turn){
-  let outputArray = [];
-  for (index = turn; index < inputArray.length; index++){
-    outputArray.push(inputArray[index]);
+  let firstPart = inputArray.slice(turn);
+  return outputArray = firstPart.concat(inputArray.slice(0,turn));
   }
-  for (index = 0; index < turn; index++){
-    outputArray.push(inputArray[index]);
-  }
-  return outputArray;
-}
 exports.rotate = rotate;
 
 /*
