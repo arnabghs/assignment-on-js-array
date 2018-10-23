@@ -246,12 +246,12 @@ exports.extractDigits = extractDigits;
  */
 
 const removeDuplicates = function(inputArray){
-  let outputArray= [];
-  for (value of inputArray){
-      if (!outputArray.includes(value)){
-        outputArray.push(value);
-      }
-  }
+  let outputArray = [];
+  inputArray.forEach( function(element){
+    if (!outputArray.includes(element)){
+      outputArray.push(element);
+    }
+  })
   return outputArray;
 }
 exports.removeDuplicates = removeDuplicates;
