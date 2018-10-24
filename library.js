@@ -3,11 +3,11 @@
  */
 
 const isOdd = function(element){
-    return element%2 != 0;
-  }
+  return element%2 != 0;
+}
 
 const selectOddNumbers = function (array){
-    return outputList = array.filter(isOdd);
+  return outputList = array.filter(isOdd);
 }
 exports.selectOddNumbers = selectOddNumbers;
 
@@ -15,8 +15,8 @@ exports.selectOddNumbers = selectOddNumbers;
  * 2. Selecting even numbers - Given a list of numbers, select the ones that are even
  */
 const isEven = function(element){
-    return element%2 == 0;
-  }
+  return element%2 == 0;
+}
 
 const selectEvenNumbers = function (array){
   return outputList = array.filter(isEven);
@@ -30,7 +30,7 @@ const sum  = function(previousValue,curentValue) {
   return previousValue+curentValue;
 }
 const sumOfaListOfNumbers = function(array){
-  return array.reduce(sum);
+  return array.reduce(sum,0);
 }
 exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
 
@@ -58,11 +58,11 @@ const everySecondElementFilter = function(state,element){
   }
   return {index : index+1 , elements : elements}
 } 
-const selectEverySecondElement = function(array){
+const selectAlternateElement = function(array){
   return outputArray = array.reduce( everySecondElementFilter,
     {index:0, elements:[]}).elements;
 }
-exports.selectEverySecondElement = selectEverySecondElement;
+exports.selectAlternateElement = selectAlternateElement;
 
 /*
  *6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order
@@ -79,8 +79,7 @@ const fiboReverse = function(length){
     firstElement = secondElement;
     secondElement = element;
   }
-  outputArray = outputArray.reverse();
-  return outputArray;
+  return printReverse(outputArray);
 }
 exports.fiboReverse = fiboReverse;
 
@@ -88,9 +87,9 @@ exports.fiboReverse = fiboReverse;
  * 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence
  */
 const getHighestValue  = function(previousValue,currentValue) {
-    previousValue = Math.max(previousValue,currentValue);
-    return previousValue;
-  }
+  previousValue = Math.max(previousValue,currentValue);
+  return previousValue;
+}
 const findGreatestNumber = function(inputArray){
   return inputArray.reduce(getHighestValue);
 }
@@ -100,9 +99,9 @@ exports.findGreatestNumber = findGreatestNumber;
  * 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence
  */
 const getLowestValue =  function(previousValue,currentValue) {
-    previousValue = Math.min(previousValue,currentValue);
-    return previousValue;
-  }
+  previousValue = Math.min(previousValue,currentValue);
+  return previousValue;
+}
 const findLowestNumber = function(inputArray){
   return inputArray.reduce(getLowestValue);
 }
@@ -123,8 +122,8 @@ exports.findAverage = findAverage;
  * 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names:
  */
 const calculateLength = function(element){
-    return element.length;
-  }
+  return element.length;
+}
 const countLength = function(inputArray){
   return inputArray.map(calculateLength);
 }
@@ -134,20 +133,20 @@ exports.countLength = countLength;
  * 11. Counting odd numbers - Write a function to count how many odd numbers are present in an array
  */
 
- const countOddNumbers  =function(inputArray){
-   let outputArray = selectOddNumbers(inputArray);
-   return (outputArray.length);
- }
+const countOddNumbers  =function(inputArray){
+  let outputArray = selectOddNumbers(inputArray);
+  return (outputArray.length);
+}
 exports.countOddNumbers = countOddNumbers;
 
 /*
  * 12. Counting even numbers - Write a function to count how many even numbers are present in an array
  */
 
- const countEvenNumbers  =function(inputArray){
-   let outputArray = selectEvenNumbers(inputArray);
-   return (outputArray.length);
- }
+const countEvenNumbers  =function(inputArray){
+  let outputArray = selectEvenNumbers(inputArray);
+  return (outputArray.length);
+}
 exports.countEvenNumbers = countEvenNumbers;
 
 /*
@@ -167,9 +166,9 @@ exports.countNosAbovelimit = countNosAbovelimit;
 
 const countNosBelowlimit = function(inputArray,threshold){
   const chooseBelowLimit = function(element){
-     return element < threshold;
-   }
-   return inputArray.filter(chooseBelowLimit).length;
+    return element < threshold;
+  }
+  return inputArray.filter(chooseBelowLimit).length;
 }
 exports.countNosBelowlimit = countNosBelowlimit;
 
@@ -207,7 +206,7 @@ exports.findIndex = findIndex;
 
 const checkOrderForAscending = function(state,currvalue){
   let {prevValue, statement}  = state;
-  if (prevValue < currvalue){
+  if (prevValue <= currvalue){
     statement.push(true);
   } else {
     statement.push(false);
@@ -220,7 +219,7 @@ const checkAscendingOrder = function(inputArray){
     {prevValue : inputArray[0]-1 , statement : [] }). statement.
     every( function (x){return x == true})
 }
-  exports.checkAscendingOrder = checkAscendingOrder;
+exports.checkAscendingOrder = checkAscendingOrder;
 
 
 /*
@@ -228,7 +227,7 @@ const checkAscendingOrder = function(inputArray){
  */
 const checkOrderForDescending = function(state,currvalue){
   let {prevValue, statement}  = state;
-  if (prevValue > currvalue){
+  if (prevValue >= currvalue){
     statement.push(true);
   } else {
     statement.push(false);
@@ -318,8 +317,8 @@ const isSubset = function(firstArray,secondArray){
   let outputArray = makeIntersection(firstArray,secondArray);
   let statement = false;
   const isPresent = function(element){
-      return outputArray.includes(element);
-    }
+    return outputArray.includes(element);
+  }
   if ( outputArray.length < firstArray.length){
     statement = secondArray.every(isPresent);
   }
@@ -332,7 +331,7 @@ exports.isSubset = isSubset;
  */
 
 const zip = function(firstArray,secondArray){
-    const pushForZip = function(state,element){
+  const pushForZip = function(state,element){
     let {index, finalArray} = state;
     finalArray[index] = [firstArray[index],element];
     index = index +1;
@@ -353,7 +352,7 @@ exports.zip = zip;
 const rotate = function(inputArray,turn){
   let firstPart = inputArray.slice(turn);
   return firstPart.concat(inputArray.slice(0,turn));
-  }
+}
 exports.rotate = rotate;
 
 /*
