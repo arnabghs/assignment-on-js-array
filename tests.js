@@ -101,9 +101,7 @@ testFunction(selectAlternateElement,[[1,2,-3,-4,5,0,6,7,0]],[1,-3,5,6,0]);
 testFunction(selectAlternateElement,[['a','b','c','d']],['a','c']); 
 logDottedLine();
 
-/*
- *6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order
- */
+/* 6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order */
 
 const fiboReverse = require('./library').fiboReverse;
 
@@ -119,9 +117,7 @@ testFunction(fiboReverse,[5],[3, 2, 1, 1, 0]);
 
 logDottedLine();
 
-/*
- * 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence
- */
+/* 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence */
 
 const {findGreatestNumber} = require('./library');
 
@@ -136,9 +132,7 @@ testFunction(findGreatestNumber,[[1,3,-5,0,-10,10,0,6]],10);
 
 logDottedLine();
 
-/*
- * 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence
- */
+/* 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence */
 
 const {findLowestNumber} = require('./library'); 
 
@@ -153,9 +147,7 @@ testFunction(findLowestNumber,[[1,3,4,0,-5,7,-10,5]],-10);
 
 logDottedLine();
 
-/*
- * 9. Average of a list - Given a list of numbers, find the average of that list
- */
+/* 9. Average of a list - Given a list of numbers, find the average of that list */
 
 const {findAverage} = require('./library'); 
 
@@ -170,9 +162,7 @@ testFunction(findAverage,[[1,2,10,20]],8.25);
 
 logDottedLine();
 
-/*
- * 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names:
- */
+/* 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names */
 
 const {countLength} = require('./library'); 
 
@@ -187,9 +177,7 @@ testFunction(countLength,[["naruto"," ","","japan"]],[6,1,0,5]);
 
 logDottedLine();
 
-/*
- * 11. Counting odd numbers - Write a function to count how many odd numbers are present in an array
- */
+/* 11. Counting odd numbers - Write a function to count how many odd numbers are present in an array */
 
 const {countOddNumbers}= require('./library'); 
 
@@ -204,9 +192,7 @@ testFunction(countOddNumbers,[[1,3,-4,-7,0,4,-2,8,0]],3)
 ;
 logDottedLine();
 
-/*
- * 12. Counting even numbers - Write a function to count how many even numbers are present in an array
- */
+/* 12. Counting even numbers - Write a function to count how many even numbers are present in an array */
 
 const {countEvenNumbers}= require('./library'); 
 
@@ -221,9 +207,7 @@ testFunction(countEvenNumbers,[[1,3,-4,-7,0,4,-2,8,0]],6)
 ;
 logDottedLine();
 
-/*
- * 13. Count how many numbers above a certain threshold in an array
- */
+/* 13. Count how many numbers above a certain threshold in an array */
 
 const {countNosAbovelimit} = require('./library');
 
@@ -238,9 +222,7 @@ testFunction(countNosAbovelimit,[[1,2,0,-6,-3,-8,0],-5],5)
 ;
 logDottedLine();
 
-/*
- * 14. Count how many numbers below a certain threshold in an array
- */
+/* 14. Count how many numbers below a certain threshold in an array */
 
 const {countNosBelowlimit} = require('./library');
 
@@ -255,9 +237,7 @@ testFunction(countNosBelowlimit,[[1,2,0,-6,-3,-8,0],-5],2)
 ;
 logDottedLine();
 
-/*
- * 15. Reversing an Array - Given an array, write a function that provides a reversed version of the same array *without* changing the contents of the original array.
- */
+/* 15. Reversing an Array - Given an array, write a function that provides a reversed version of the same array *without* changing the contents of the original array */
 
 const {reverseArray} = require('./library');
 
@@ -269,9 +249,7 @@ testFunction(reverseArray,[[1,4,-6,0,-2,3]],[3,-2,0,-6,4,1]);
 testFunction(reverseArray,[[5,"germany",0,"L.A",7]],[7,"L.A",0,"germany",5]);
 logDottedLine();
 
-/*
- * 16. Index Of a Number - Given an array of numbers find the first position of a specified number
- */
+/* 16. Index Of a Number - Given an array of numbers find the first position of a specified number */
 
 const {findIndex} = require('./library');
 
@@ -286,9 +264,7 @@ testFunction(findIndex,[[1,4,0,-5,-6,7,-3,0],0], 2)
 ;
 logDottedLine();
 
-/*
- * 17. Ascending order - Given an array of numbers, check if the array is in ascending order
- */
+/* 17. Ascending order - Given an array of numbers, check if the array is in ascending order */
 
 const {checkAscendingOrder} = require('./library');
 
@@ -307,9 +283,7 @@ testFunction(checkAscendingOrder,[[-5,-2,0,5,8]],true)
 ;
 logDottedLine();
 
-/*
- * 18. Descending order - Given an array of numbers, check if the array is in descending order
- */
+/* 18. Descending order - Given an array of numbers, check if the array is in descending order */
 
 const {checkDescendingOrder} = require('./library');
 
@@ -327,9 +301,7 @@ testFunction(checkDescendingOrder,[[5,5,4,4,3,2,1]],true);
 testFunction(checkDescendingOrder,[[8,6,5,2,0,-3,-6]],true);
 logDottedLine();
 
-/*
- * 19. Extract digits - Given a number, extract the digits of a number into an array:
- */
+/* 19. Extract digits - Given a number, extract the digits of a number into an array: */
 
 const {extractDigits} = require('./library');
 
@@ -342,9 +314,7 @@ testFunction(extractDigits,[812003],[8,1,2,0,0,3])
 ;
 logDottedLine();
 
-/*
- * 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements.
- */
+/* 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements. */
 
 const {removeDuplicates} = require('./library');
 
@@ -359,9 +329,7 @@ testFunction(removeDuplicates,[[1,0,-1,3,-1,-2,0,-2]],[1,0,-1,3,-2]);
 
 logDottedLine();
 
-/*
- *  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays.
- */
+/*  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays */
 
 const {makeUnion} = require('./library'); 
 
@@ -376,9 +344,7 @@ testFunction(makeUnion,[[1,2,0,-3,2,1,-4],[2,3,0,-2,-3]],[1,2,0,-3,-4,3,-2]);
 
 logDottedLine();
 
-/*
- *  22. Intersection - Given two arrays, generate a new array consisting of unique elements that are contained in both arrays.
- */
+/*  22. Intersection - Given two arrays, generate a new array consisting of unique elements that are contained in both arrays */
 
 const {makeIntersection} = require('./library'); 
 
@@ -395,9 +361,7 @@ testFunction(makeIntersection,[[1,0,-7,0,6,-5],[0,7,-7,-5,1,1,1,0]],[1,0,-7,-5])
 
 logDottedLine();
 
-/*
- *  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second.
- */
+/*  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second */
 
 const {findDifference} = require('./library'); 
 
@@ -414,9 +378,7 @@ testFunction(findDifference,[[1,-1,0,2,-3,6],[6,-3,-4,-1,3]],[1,0,2]);
 
 logDottedLine();
 
-/*
- *  24. isSubset - Given two arrays, check if the second is a proper subset of the first.
- */
+/*  24. isSubset - Given two arrays, check if the second is a proper subset of the first */
 
 const {isSubset} = require('./library'); 
 
@@ -437,9 +399,7 @@ testFunction(isSubset,[[1,0,-4,0,-5,7,8,1],[0,-4,-5,1]],true);
 
 logDottedLine();
 
-/*
- *  25. Zip - insert elements from two arrays as follows:
- */
+/*  25. Zip - insert elements from two arrays as follows: */
 
 const {zip} = require('./library'); 
 
@@ -456,9 +416,7 @@ testFunction(zip,[[1,4,0,-6],[-3,0,-6]],[[1,-3],[4,0],[0,-6]]);
 
 logDottedLine();
 
-/*
- *  26. Rotate - creates a new array by rotating elements from the given array.
- */
+/*  26. Rotate - creates a new array by rotating elements from the given array */
 
 const {rotate} = require('./library'); 
 
@@ -479,9 +437,7 @@ testFunction(rotate,[[1,-2,0,4,-5],4],[-5,1,-2,0,4]);
 
 logDottedLine();
 
-/*
- *  27. Partition - Given an array of numbers, it returns a partitioned array consisting of numbers above a certain number and below a certain number
- */
+/*  27. Partition - Given an array of numbers, it returns a partitioned array consisting of numbers above a certain number and below a certain number */
 
 const {partitionArray} = require('./library'); 
 
