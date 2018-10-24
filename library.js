@@ -1,6 +1,4 @@
-/*
- * 1. Selecting odd numbers - Given a list of numbers, select the ones that are odd
- */
+/* 1. Selecting odd numbers - Given a list of numbers, select the ones that are odd */
 
 const isOdd = function(element){
   return element%2 != 0;
@@ -11,9 +9,7 @@ const selectOddNumbers = function (array){
 }
 exports.selectOddNumbers = selectOddNumbers;
 
-/*
- * 2. Selecting even numbers - Given a list of numbers, select the ones that are even
- */
+/* 2. Selecting even numbers - Given a list of numbers, select the ones that are even */
 const isEven = function(element){
   return element%2 == 0;
 }
@@ -23,9 +19,7 @@ const selectEvenNumbers = function (array){
 }
 exports.selectEvenNumbers = selectEvenNumbers;
 
-/*
- * 3. Sum of a list of numbers - Given a list of numbers, find the sum of all these numbers
- */
+/* 3. Sum of a list of numbers - Given a list of numbers, find the sum of all these numbers */
 const sum  = function(previousValue,curentValue) {
   return previousValue+curentValue;
 }
@@ -34,9 +28,7 @@ const sumOfaListOfNumbers = function(array){
 }
 exports.sumOfaListOfNumbers = sumOfaListOfNumbers;
 
-/*
- * 4. Printing reverse - Given a list of numbers, PRINT the list in reverse order
- */
+/* 4. Printing reverse - Given a list of numbers, PRINT the list in reverse order */
 const printReverse = function (array){
   let outputArray = [];
   const putAtBeginning = function(element) {
@@ -47,9 +39,7 @@ const printReverse = function (array){
 }
 exports.printReverse = printReverse;
 
-/*
- 5. Selecting every second element - Given a list of numbers, select every second one:
- */
+/* Selecting every second element - Given a list of numbers, select every second one: */
 
 const everySecondElementFilter = function(state,element){
   let {index , elements} = state;
@@ -64,9 +54,7 @@ const selectAlternateElement = function(array){
 }
 exports.selectAlternateElement = selectAlternateElement;
 
-/*
- *6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order
- */
+/*6. Reverse Fibonacci - Generate a fibonacci sequence of length n in reverse order */
 
 const fiboReverse = function(length){
   let firstElement = 0;
@@ -83,9 +71,7 @@ const fiboReverse = function(length){
 }
 exports.fiboReverse = fiboReverse;
 
-/*
- * 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence
- */
+/* 7. Greatest number in a list - Given a list of numbers, find the greatest number in that sequence */
 const getHighestValue  = function(previousValue,currentValue) {
   previousValue = Math.max(previousValue,currentValue);
   return previousValue;
@@ -95,9 +81,7 @@ const findGreatestNumber = function(inputArray){
 }
 exports.findGreatestNumber = findGreatestNumber;
 
-/*
- * 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence
- */
+/* 8. Lowest number in a list - Given a list of numbers, find the lowest number in that sequence */
 const getLowestValue =  function(previousValue,currentValue) {
   previousValue = Math.min(previousValue,currentValue);
   return previousValue;
@@ -107,9 +91,7 @@ const findLowestNumber = function(inputArray){
 }
 exports.findLowestNumber = findLowestNumber;
 
-/*
- * 9. Average of a list - Given a list of numbers, find the average of that list
- */
+/* 9. Average of a list - Given a list of numbers, find the average of that list */
 
 const findAverage = function(inputArray){
   let sum = sumOfaListOfNumbers(inputArray);
@@ -118,20 +100,16 @@ const findAverage = function(inputArray){
 }
 exports.findAverage = findAverage;
 
-/*
- * 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names:
- */
-const calculateLength = function(element){
-  return element.length;
+/* 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names: */
+const calculateLength = function(elemen
+  return element.leng ;
 }
 const countLength = function(inputArray){
   return inputArray.map(calculateLength);
 }
 exports.countLength = countLength;
 
-/*
- * 11. Counting odd numbers - Write a function to count how many odd numbers are present in an array
- */
+/* 11. Counting odd numbers - Write a function to count how many odd numbers are present in an array */
 
 const countOddNumbers  =function(inputArray){
   let outputArray = selectOddNumbers(inputArray);
@@ -139,9 +117,7 @@ const countOddNumbers  =function(inputArray){
 }
 exports.countOddNumbers = countOddNumbers;
 
-/*
- * 12. Counting even numbers - Write a function to count how many even numbers are present in an array
- */
+/* 12. Counting even numbers - Write a function to count how many even numbers are present in an array */
 
 const countEvenNumbers  =function(inputArray){
   let outputArray = selectEvenNumbers(inputArray);
@@ -149,9 +125,7 @@ const countEvenNumbers  =function(inputArray){
 }
 exports.countEvenNumbers = countEvenNumbers;
 
-/*
- * 13. Count how many numbers above a certain threshold in an array
- */
+/* 13. Count how many numbers above a certain threshold in an array */
 const countNosAbovelimit = function(inputArray,threshold){
   const chooseAboveLimit = function(element){
     return element > threshold;
@@ -160,9 +134,7 @@ const countNosAbovelimit = function(inputArray,threshold){
 }
 exports.countNosAbovelimit = countNosAbovelimit;
 
-/*
- * 14. Count how many numbers below a certain threshold in an array
- */
+/* 14. Count how many numbers below a certain threshold in an array */
 
 const countNosBelowlimit = function(inputArray,threshold){
   const chooseBelowLimit = function(element){
@@ -173,9 +145,7 @@ const countNosBelowlimit = function(inputArray,threshold){
 exports.countNosBelowlimit = countNosBelowlimit;
 
 
-/*
- * 15. Reversing an Array - Given an array, write a function that provides a reversed version of the same array *without* changing the contents of the original array.
- */
+/* 15. Reversing an Array - Given an array, write a function that provides a reversed version of the same array *without* changing the contents of the original array */
 
 const reverseArray = function(inputArray){
   let outputArray = [];
@@ -187,9 +157,7 @@ const reverseArray = function(inputArray){
 }
 exports.reverseArray = reverseArray;  
 
-/*
- * 16. Index Of a Number - Given an array of numbers find the first position of a specified number
- */
+/* 16. Index Of a Number - Given an array of numbers find the first position of a specified number */
 
 const findIndex = function(inputArray,number){
   const matchWithANumber = function (element){
@@ -200,9 +168,7 @@ const findIndex = function(inputArray,number){
 exports.findIndex = findIndex;
 
 
-/*
- * 17. Ascending order - Given an array of numbers, check if the array is in ascending order
- */
+/* 17. Ascending order - Given an array of numbers, check if the array is in ascending order */
 
 const checkOrderForAscending = function(state,currvalue){
   let {prevValue, statement}  = state;
@@ -222,9 +188,7 @@ const checkAscendingOrder = function(inputArray){
 exports.checkAscendingOrder = checkAscendingOrder;
 
 
-/*
- * 18. Descending order - Given an array of numbers, check if the array is in descending order
- */
+/* 18. Descending order - Given an array of numbers, check if the array is in descending order */
 const checkOrderForDescending = function(state,currvalue){
   let {prevValue, statement}  = state;
   if (prevValue >= currvalue){
@@ -243,9 +207,7 @@ const checkDescendingOrder = function(inputArray){
 
 exports.checkDescendingOrder = checkDescendingOrder;
 
-/*
- * 19. Extract digits - Given a number, extract the digits of a number into an array:
- */
+/* 19. Extract digits - Given a number, extract the digits of a number into an array: */
 
 const extractDigits = function(number){
   let stringOfNumber = ''+number;
@@ -257,9 +219,7 @@ const extractDigits = function(number){
 }
 exports.extractDigits = extractDigits;
 
-/*
- * 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements.
- */
+/* 20. Unique - Given an array, remove duplicate elements and return an array of only unique elements. */
 const removeDuplicates = function(inputArray){
   let outputArray = [];
   const isPresent = function(element){
@@ -273,9 +233,7 @@ const removeDuplicates = function(inputArray){
 exports.removeDuplicates = removeDuplicates;
 
 
-/*
- *  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays.
- */
+/*  21. Union - Given two arrays, generate a new array consisting of unique elements across both those arrays. */
 
 const makeUnion = function(firstArray,secondArray){
   let outputArray = firstArray.concat(secondArray);
@@ -284,9 +242,7 @@ const makeUnion = function(firstArray,secondArray){
 }
 exports.makeUnion = makeUnion;
 
-/*
- *  22. Intersection - Given two arrays, generate a new array consisting of unique elements that are contained in both arrays.
- */
+/*  22. Intersection - Given two arrays, generate a new array consisting of unique elements that are contained in both arrays */
 
 const makeIntersection = function(firstArray,secondArray){
   const isPresent = function (element){
@@ -297,9 +253,7 @@ const makeIntersection = function(firstArray,secondArray){
 }
 exports.makeIntersection = makeIntersection;
 
-/*
- *  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second.
- */
+/*  23. Difference - Given two arrays, generate a new array that consists of unique elements that are present in the first array, but not in the second */
 const findDifference = function (firstArray,secondArray){
   const isPresent = function (element){
     return (!secondArray.includes(element));
@@ -309,9 +263,7 @@ const findDifference = function (firstArray,secondArray){
 }
 exports.findDifference = findDifference;
 
-/*
- *  24. isSubset - Given two arrays, check if the second is a proper subset of the first.
- */
+/*  24. isSubset - Given two arrays, check if the second is a proper subset of the first */
 
 const isSubset = function(firstArray,secondArray){
   let outputArray = makeIntersection(firstArray,secondArray);
@@ -326,9 +278,7 @@ const isSubset = function(firstArray,secondArray){
 }
 exports.isSubset = isSubset;
 
-/*
- *  25. Zip - insert elements from two arrays as follows:
- */
+/*  25. Zip - insert elements from two arrays as follows */
 
 const zip = function(firstArray,secondArray){
   const pushForZip = function(state,element){
@@ -345,9 +295,7 @@ const zip = function(firstArray,secondArray){
 exports.zip = zip;
 
 
-/*
- *  26. Rotate - creates a new array by rotating elements from the given array.
- */
+/*  26. Rotate - creates a new array by rotating elements from the given array */
 
 const rotate = function(inputArray,turn){
   let firstPart = inputArray.slice(turn);
@@ -355,9 +303,7 @@ const rotate = function(inputArray,turn){
 }
 exports.rotate = rotate;
 
-/*
- *  27. Partition - Given an array of numbers, it returns a partitioned array consisting of numbers above a certain number and below a certain number
- */
+/*  27. Partition - Given an array of numbers, it returns a partitioned array consisting of numbers above a certain number and below a certain number */
 
 const partitionArray = function (inputArray,limit){
   const partitioner = function(state,element){
