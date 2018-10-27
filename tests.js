@@ -6,40 +6,74 @@ const assert = require('assert');
 
 /* 1. Selecting odd numbers - Given a list of numbers, select the ones that are odd */
 
-const selectOdds = require('./library').selectOddNumbers;
+const selectOddNumbers = require('./library').selectOddNumbers; // TODO - put all requires at the top. so that I know what you're getting from the library. This is contrary to assert where I already know what you can potentially get.
+// TODO why is selectOddNumbers different from selectOddNumbers?
 
-//without any input:
-testFunction(selectOdds,[[]],[]);
+// TODO fix the comma thing
+
+//empty array as input: 
+testFunction(selectOddNumbers,[[]],[]);
 
 //checking with one odd:
-testFunction(selectOdds,[[1]],[1]);
+testFunction(selectOddNumbers,[[1]],[1]);
 
-//checking with odd and even:
-testFunction(selectOdds,[[1,2]],[1]);
+//checking with odd and even: // 
+testFunction(selectOddNumbers,[[1,2]],[1]);
+
+//checking with even and odd: // 
+testFunction(selectOddNumbers,[[2,1]],[1]);
 
 //checking with list of odds:
-testFunction(selectOdds,[[1,3,4,5,6,7,8]],[1,3,5,7]);
+testFunction(selectOddNumbers,[[1,3,4,5,6,7,8]],[1,3,5,7]);
 
-//edge case - with 0:
-testFunction(selectOdds,[[1,2,0]],[1]);
+//edge case - with 0: TODO why is 0 an edge case?
+testFunction(selectOddNumbers,[[1,2,0]],[1]);
 
-//edge case - with negative nos:
-testFunction(selectOdds,[[1,-3,4]],[1,-3]); 
+//edge case - with negative nos: TODO whats nos
+testFunction(selectOddNumbers,[[1,-3,4]],[1,-3]); 
 
-logDottedLine();
+logDottedLine(); // TODO later you can see how to register your tests with your framework so that you don't have to log things in the the test file. 
+/*
+ *
+ * registerTestGroup([testFunctionOdd1;testFunc2;testFunc3;testFunc4])  THIS should be either register or runTestGroup
+ * registerTestGroup([testFunctionEven1,testFunctionEven2;testFunctionEven3])
+ *
+ *
+ *  ________________________
+ *
+ *  const functionWrapper = function(
+ *
+ *
+ *_______________
+ ________________
+ *  testLoggerLibrary
+ *
+ *  const runTestGroup = function(tests) {
+ *    logDottedLine() // Initialization before
+ *    tests.forEach(test => test())
+ *    logDottedLine() // Initialization after
+ *  }
+ *
+ * Talk with Rahul for more details.
+ *
+ */
+
 
 /*  2. Selecting even numbers - Given a list of numbers, select the ones that are even */
 
 const selectEvens = require('./library').selectEvenNumbers;
 
-//without any input:
+//empty array as input:
 testFunction(selectEvens,[[]],[]);
 
 //checking with one even:
 testFunction(selectEvens,[[6]],[6]);
 
-//checking with one  even and one even:
+//checking with one odd and one even:
 testFunction(selectEvens,[[1,2]],[2]);
+
+//checking with even and odd: // 
+testFunction(selectOddNumbers,[[2,1]],[1]);
 
 //checking with a list:
 testFunction(selectEvens,[[1,3,4,5,6,7,8]],[4,6,8]);
@@ -55,8 +89,20 @@ logDottedLine();
 /*  3. Sum of a list of numbers - Given a list of numbers, find the sum of all these numbers  */
 
 const sumOfaListOfNumbers = require('./library').sumOfaListOfNumbers;
+// name - probably the word sum was enough. "ofAListOfNumbers" looks very verbose and unnecessary
 
-//without any input:
+// 
+// Test cases can be incremental in complexity
+// You have a case of no input
+// One input
+// But then suddenly you have too many inputs
+// Never had a case with 2 numbers
+// Which would have made more sense... 
+//
+// Look at Anu's test cases for more details
+//
+//
+//empty array as input:
 testFunction(sumOfaListOfNumbers,[[]],0);
 //single_element:
 testFunction(sumOfaListOfNumbers,[[2]],2);
@@ -67,10 +113,11 @@ testFunction(sumOfaListOfNumbers,[[1,2,3,4,5,6,7,8,9,10]],55);
 
 logDottedLine();
 
+// Why is this function named print?
 /* 4. Printing reverse - Given a list of numbers, PRINT the list in reverse order */ 
 const printReverse = require('./library').printReverse;
 
-//without any input:
+//empty array as input:
 testFunction(printReverse,[[]],[]);
 //single digit:
 testFunction(printReverse,[[1]],[1]);
@@ -86,10 +133,10 @@ testFunction(printReverse,[["germany","US","Japan",8]],[8,"Japan","US","germany"
 logDottedLine();
 
 /* 5. Selecting every second element - Given a list of numbers, select every second one: */
-
+// Name should be plural... elements not element
 const selectAlternateElement = require('./library').selectAlternateElement;
 
-//without any input:
+//empty array as input:
 testFunction(selectAlternateElement,[[]],[]);
 //list starting with even & odd no of elements:
 testFunction(selectAlternateElement,[[2,3,4,5,6]],[2,4,6]);
@@ -105,7 +152,7 @@ logDottedLine();
 
 const fiboReverse = require('./library').fiboReverse;
 
-//without any input:
+//empty array as input:
 testFunction(fiboReverse,[0],[]);
 //for single digit:
 testFunction(fiboReverse,[1],[0]); 
@@ -166,7 +213,7 @@ logDottedLine();
 
 const {countLength} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(countLength,[[]],[]);
 // single word:
 testFunction(countLength,[["kolkata"]],[7]);
@@ -181,7 +228,7 @@ logDottedLine();
 
 const {countOddNumbers}= require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(countOddNumbers,[[]],0);
 // with one odd:
 testFunction(countOddNumbers,[[1]],1);
@@ -196,7 +243,7 @@ logDottedLine();
 
 const {countEvenNumbers}= require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(countEvenNumbers,[[]],0);
 // with one even:
 testFunction(countEvenNumbers,[[2]],1);
@@ -211,7 +258,7 @@ logDottedLine();
 
 const {countNosAbovelimit} = require('./library');
 
-//without any input:
+//empty array as input:
 testFunction(countNosAbovelimit,[[],1],0);
 // single digit:
 testFunction(countNosAbovelimit,[[1],0],1);
@@ -226,7 +273,7 @@ logDottedLine();
 
 const {countNosBelowlimit} = require('./library');
 
-//without any input:
+//empty array as input:
 testFunction(countNosBelowlimit,[[],1],0);
 // single digit:
 testFunction(countNosBelowlimit,[[1],2],1);
@@ -253,7 +300,7 @@ logDottedLine();
 
 const {findIndex} = require('./library');
 
-//without any input:
+//empty array as input:
 testFunction(findIndex,[[],2],-1);
 // single element array:
 testFunction(findIndex,[[2],2],0);
@@ -268,7 +315,7 @@ logDottedLine();
 
 const {checkAscendingOrder} = require('./library');
 
-//without any input:
+//empty array as input:
 testFunction(checkAscendingOrder,[[]],true);
 // one element array:
 testFunction(checkAscendingOrder,[[1]],true);
@@ -287,7 +334,7 @@ logDottedLine();
 
 const {checkDescendingOrder} = require('./library');
 
-//without any input:
+//empty array as input:
 testFunction(checkDescendingOrder,[[]],true);
 // one element array:
 testFunction(checkDescendingOrder,[[1]],true);
@@ -318,7 +365,7 @@ logDottedLine();
 
 const {removeDuplicates} = require('./library');
 
-//without any input:
+//empty array as input:
 testFunction(removeDuplicates,[[]],[]);
 // one element array:
 testFunction(removeDuplicates,[[2]],[2]); 
@@ -333,7 +380,7 @@ logDottedLine();
 
 const {makeUnion} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(makeUnion,[[],[]],[]);
 // for one elements array:
 testFunction(makeUnion,[[1],[2]],[1,2]); 
@@ -348,7 +395,7 @@ logDottedLine();
 
 const {makeIntersection} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(makeIntersection,[[],[]],[]);
 // for one elements array:
 testFunction(makeIntersection,[[1],[1]],[1]); 
@@ -365,7 +412,7 @@ logDottedLine();
 
 const {findDifference} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(findDifference,[[],[]],[]);
 // for one element:
 testFunction(findDifference,[[1],[1]],[]); 
@@ -403,7 +450,7 @@ logDottedLine();
 
 const {zip} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(zip,[[],[]],[]);
 // for one element array:
 testFunction(zip,[[1],[2]],[[1,2]]); 
@@ -420,7 +467,7 @@ logDottedLine();
 
 const {rotate} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(rotate,[[],5],[]);
 // single element:
 testFunction(rotate,[[1],1],[1]); 
@@ -441,7 +488,7 @@ logDottedLine();
 
 const {partitionArray} = require('./library'); 
 
-//without any input:
+//empty array as input:
 testFunction(partitionArray,[[],5],[[],[]]);
 // single element array:
 testFunction(partitionArray,[[1,2],1],[[1],[2]]); 
@@ -450,6 +497,6 @@ testFunction(partitionArray,[[1,2,7,4,9,10,5],5],[[1,2,4,5], [7,9,10]]);
 // including 0 and -ve:
 testFunction(partitionArray,[[1,-3,5,-4,0,6,2,3],1],[[1,-3,-4,0],[5,6,2,3]]);
 
-
+// TODO the message could have come from your test library... 
 console.log("\n\n---------- Everything is fine -------------\n");
 

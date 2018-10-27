@@ -101,8 +101,8 @@ const findAverage = function(inputArray){
 exports.findAverage = findAverage;
 
 /* 10. Mapping lengths - Given a list of names, generate another array that contains the length of each of the names: */
-const calculateLength = function(elemen
-  return element.leng ;
+const calculateLength = function(element){
+  return element.length ;
 }
 const countLength = function(inputArray){
   return inputArray.map(calculateLength);
